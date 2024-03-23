@@ -21,7 +21,7 @@ jobs:
           name: Download CLI
           command: |
             mkdir sf
-            wget -qO- $DX_CLI_URL | tar xf - -C sf -strip-components 1
+            wget -qO- $DX_CLI_URL | tar xvzf -C sf -strip-components 1
       - run:
           name: Install CLI
           command: |
