@@ -14,14 +14,14 @@ jobs:
     environment:
       # from https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli_standalone.htm
       # and https://developer.salesforce.com/media/salesforce-cli/manifest.json
-      - DX_CLI_URL: https://developer.salesforce.com/media/salesforce-cli/sf/channels/stable/sf-linux-arm.tar.xz
+      - DX_CLI_URL: https://developer.salesforce.com/media/salesforce-cli/sf/channels/stable/sf-linux-arm64.tar.xz
     steps:
       - checkout
       - run:
           name: Download CLI
           command: |
             mkdir sf
-            wget -qO- $DX_CLI_URL | tar xJf $DX_CLI_URL -C sf --strip-components 1
+            wget -qO- $DX_CLI_URL | tar -xJ -C sf -strip-components 1
       - run:
           name: Install CLI
           command: |
