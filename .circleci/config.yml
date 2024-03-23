@@ -20,12 +20,12 @@ jobs:
       - run:
           name: Download CLI
           command: |
-            mkdir sf
-            wget -qO- $DX_CLI_URL | tar xvzf -C sf -strip-components 1
+            mkdir cli/sf
+            wget -qO- $DX_CLI_URL | tar xJf $DX_CLI_URL -C ~/cli/sf --strip-components 1
       - run:
           name: Install CLI
           command: |
-            ./sf/install
+            .cli/sf/install
             sf
             mkdir tmp
       - run:
